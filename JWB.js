@@ -1,9 +1,9 @@
 /**<nowiki>
  * Install this script by pasting the following in your personal JavaScript file:
 
-mw.loader.load('//en.wikipedia.org/w/index.php?title=User:YFdyh000/JWB.js/load.js&action=raw&ctype=text/javascript');
+mw.loader.load('//zh.wikipedia.org/w/index.php?title=User:YFdyh000/JWB.js/load.js&action=raw&ctype=text/javascript');
 
- * Or for users on en.wikipedia.org:
+ * Or for users on zh.wikipedia.org:
 
 importScript( 'User:YFdyh000/JWB.js/load.js' ); // Backlink: [[User:YFdyh000/JWB.js/load.js]]
 
