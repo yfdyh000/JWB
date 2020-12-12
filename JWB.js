@@ -541,8 +541,8 @@ JWB.api.get = function(pagename) {
 };
 
 //Some functions with self-explanatory names:
-JWB.check.editing = function() {
-    if (!JWB.authorized) {
+JWB.check.canEditing = function() {
+    if (JWB.authorized) {
         return true;
     } else {
         if (JWB.messages.en) {
@@ -552,13 +552,13 @@ JWB.check.editing = function() {
         return false;
     }
 };
-JWB.check.sysop = function() {
+JWB.check.isSysop = function() {
     alert('You are not an administrator');
     return JWB.sysop;
 };
 
 JWB.api.submit = function(page) {
-    if (!JWB.check.editing) return;
+    if (!JWB.check.canEditing()) return;
 
     JWB.status('submit');
     var summary = $('#summary').val();
@@ -599,7 +599,7 @@ JWB.api.preview = function() {
     });
 };
 JWB.api.move = function() {
-    if (!JWB.check.editing) return;
+    if (!JWB.check.canEditing()) return;
 
     JWB.status('move');
     var topage = $('#moveTo').val().replace(/\$x/gi, JWB.page.pagevar);
@@ -624,7 +624,7 @@ JWB.api.move = function() {
     });
 };
 JWB.api.del = function() {
-    if (!JWB.check.sysop) return;
+    if (!JWB.check.isSysop()) return;
 
     JWB.status(($('#deletePage').is('.undelete') ? 'un' : '') + 'delete');
     var summary = $('#summary').val();
@@ -642,7 +642,7 @@ JWB.api.del = function() {
     });
 };
 JWB.api.protect = function() {
-    if (!JWB.check.sysop) return;
+    if (!JWB.check.isSysop()) return;
 
     JWB.status('protect');
     var summary = $('#summary').val();
@@ -676,7 +676,7 @@ JWB.api.protect = function() {
 };
 
 JWB.api.watch = function() {
-    if (!JWB.check.editing) return;
+    if (!JWB.check.canEditing()) return;
 
     JWB.status('watch');
     var data = {
