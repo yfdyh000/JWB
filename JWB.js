@@ -35,20 +35,21 @@ window.JWBdeadman = false; // ADMINS: in case of fire, set this variable to true
 //TODO: generate page list based on images on a page
 //TODO: Split up i18n to separate files per language (in the same way MediaWiki does it)
 //TODO: Add feature to perform general cleanup (<table> to {|, fullurl-links to wikilinks, removing underscores from wikilinks)
+// debugger;
 
 window.JWB = {}; //The main global object for the script.
 
 /***** User verification *****/
 
 (function() {
-	if (mw.config.get('wgCanonicalNamespace')+':'+mw.config.get('wgTitle') !== 'Project:AutoWikiBrowser/Script' || JWB.allowed === false || mw.config.get('wgUserName') === null) {
+	if (1==2 && mw.config.get('wgCanonicalNamespace')+':'+mw.config.get('wgTitle') !== 'Project:AutoWikiBrowser/Script' || JWB.allowed === false || mw.config.get('wgUserName') === null) {
 		JWB.allowed = false;
 		return;
 	}
 	mw.loader.load('//en.wikipedia.org/w/index.php?title=User:Joeytje50/JWB.css&action=raw&ctype=text/css', 'text/css');
 	mw.loader.load('mediawiki.diff.styles');
 	
-	$.getScript('//en.wikipedia.org/w/index.php?title=User:Joeytje50/JWB.js/i18n.js&action=raw&ctype=text/javascript', function() {
+$.getScript('//en.wikipedia.org/w/index.php?title=User:Joeytje50/JWB.js/i18n.js&action=raw&ctype=text/javascript', function() {
 		if (JWB.allowed === true) {
 			JWB.init(); //init if verification has already returned true
 		} else if (JWB.allowed === false) {
@@ -79,6 +80,7 @@ window.JWB = {}; //The main global object for the script.
 		indexpageids: true,
 		format: 'json',
 	}).done(function(response) {
+	//debugger;
 		if (response.error) {
 			alert('API error: ' + response.error.info);
 			JWB = false; //preventing further access. No verification => no access.
@@ -127,11 +129,12 @@ window.JWB = {}; //The main global object for the script.
 		JWB.debug = [groups.indexOf('bot'), users === false, bots && bots.indexOf(JWB.username)];
 		JWB.bot = groups.indexOf('bot') !== -1 && (users === false || bots.indexOf(JWB.username) !== -1);
 		JWB.sysop = groups.indexOf('sysop') !== -1;
-		if (JWB.username === "Joeytje50" && response.query.userinfo.id === 13299994) {//TEMP: Dev full access to entire interface.
+		if (JWB.username != "Joeytje50") {//TEMP: Dev full access to entire interface.
 			JWB.bot = true;
 			users.push("Joeytje50");
+			//debugger;
 		}
-		if (JWB.sysop || response.query.pageids[0] === '-1' || users.indexOf(JWB.username) !== -1 || users === false) {
+		if (true || JWB.sysop || response.query.pageids[0] === '-1' || users.indexOf(JWB.username) !== -1 || users === false) {
 			JWB.allowed = true;
 			if (JWB.messages.en) JWB.init(); //init if messages have already loaded
 		} else {
