@@ -1553,8 +1553,8 @@ JWB.messages.zh_hans = {
 
     //Setup
     'setup-prompt': '将当前初始设置保存到 $1 时如何命名？',
-    'setup-prompt-store': '临时存储',
-    'setup-prompt-save': '本地文件',
+    'setup-prompt-store': '临时空间',
+    'setup-prompt-save': '本地文件/页面',
     'setup-summary': '更新 JWB 设置 /*半自动*/', //this is based on wgContentLanguage, not wgUserLanguage.
     'old-browser': '您的浏览器不支持导入文件。请升级使用较新款浏览器，或将文件内容上传到 wiki。链接见状态栏。',
     'not-json': '仅可导入 JSON 文件。请确保您的文件使用 .json 扩展名，或在必要时更改其扩展名。',
