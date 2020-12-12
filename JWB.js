@@ -41,7 +41,7 @@ window.JWB = {}; //The main global object for the script.
 /***** User verification *****/
 
 (function() {
-    if (1 == 2 && mw.config.get('wgCanonicalNamespace') + ':' + mw.config.get('wgTitle') !== 'Project:AutoWikiBrowser/Script' || JWB.allowed === false || mw.config.get('wgUserName') === null) {
+    if (mw.config.get('wgCanonicalNamespace') + ':' + mw.config.get('wgTitle') !== 'Project:AutoWikiBrowser/Script' || JWB.allowed === false || mw.config.get('wgUserName') === null) {
         JWB.allowed = false;
         return;
     }
@@ -320,11 +320,8 @@ window.JWB = {}; //The main global object for the script.
         JWB.debug = [groups.indexOf('bot'), users === false, bots && bots.indexOf(JWB.username)];
         JWB.bot = groups.indexOf('bot') !== -1 && (users === false || bots.indexOf(JWB.username) !== -1);
         JWB.sysop = groups.indexOf('sysop') !== -1;
-        if (JWB.username != "Joeytje50") { //TEMP: Dev full access to entire interface.
-            JWB.bot = true;
-            users.push("Joeytje50");
-        }
-        if (true || JWB.sysop || response.query.pageids[0] === '-1' || users.indexOf(JWB.username) !== -1 || users === false) {
+        JWB.authorized = JWB.sysop || response.query.pageids[0] === '-1' || users.indexOf(JWB.username) !== -1 || users === false;
+        if (true || JWB.authorized) {
             JWB.allowed = true;
             if (JWB.messages.en) JWB.init(); //init if messages have already loaded
         } else {
@@ -544,7 +541,25 @@ JWB.api.get = function(pagename) {
 };
 
 //Some functions with self-explanatory names:
+JWB.check.editing = function() {
+    if (!JWB.authorized) {
+        return true;
+    } else {
+        if (JWB.messages.en) {
+            //run this after messages have loaded, so the message that shows is in the user's language
+            alert(JWB.msg('not-on-list'));
+        }
+        return false;
+    }
+}
+JWB.check.sysop = function() {
+    alert('You are not an administrator');
+    return JWB.sysop;
+}
+
 JWB.api.submit = function(page) {
+    if (!JWB.check.editing) return;
+
     JWB.status('submit');
     var summary = $('#summary').val();
     if ($('#summary').parent('label').hasClass('viaJWB')) summary += JWB.summarySuffix;
@@ -584,6 +599,8 @@ JWB.api.preview = function() {
     });
 };
 JWB.api.move = function() {
+    if (!JWB.check.editing) return;
+
     JWB.status('move');
     var topage = $('#moveTo').val().replace(/\$x/gi, JWB.page.pagevar);
     var summary = $('#summary').val();
@@ -607,6 +624,8 @@ JWB.api.move = function() {
     });
 };
 JWB.api.del = function() {
+    if (!JWB.check.sysop) return;
+
     JWB.status(($('#deletePage').is('.undelete') ? 'un' : '') + 'delete');
     var summary = $('#summary').val();
     if ($('#summary').parent('label').hasClass('viaJWB')) summary += JWB.summarySuffix;
@@ -623,6 +642,8 @@ JWB.api.del = function() {
     });
 };
 JWB.api.protect = function() {
+    if (!JWB.check.sysop) return;
+
     JWB.status('protect');
     var summary = $('#summary').val();
     if ($('#summary').parent('label').hasClass('viaJWB')) summary += JWB.summarySuffix;
@@ -655,6 +676,8 @@ JWB.api.protect = function() {
 };
 
 JWB.api.watch = function() {
+    if (!JWB.check.editing) return;
+
     JWB.status('watch');
     var data = {
         'action': 'watch',
