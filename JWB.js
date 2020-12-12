@@ -1370,7 +1370,7 @@ JWB.init = function() {
         '<label style="display:block;">' + JWB.msg('label-rwith') + ' <input type="text" class="replaceWith"/></label>' +
         '<div class="regexswitch">' +
         '<label><input type="checkbox" class="useRegex"> ' + JWB.msg('label-useregex') + '</label>' +
-        '<a class="re101" href="http://regex101.com/#javascript" target="_blank">?</a>' +
+        '<a class="re101" href="https://regex101.com/#javascript" target="_blank">?</a>' +
         '<label class="divisor" title="' + JWB.msg('tip-regex-flags') + '" style="display:none;">' +
         JWB.msg('label-regex-flags') + ' <input type="text" class="regexFlags" value="g"/>' + //default: global replacement
         '</label>' +
