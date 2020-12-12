@@ -35,7 +35,6 @@ window.JWBdeadman = false; // ADMINS: in case of fire, set this variable to true
 //TODO: generate page list based on images on a page
 //TODO: Split up i18n to separate files per language (in the same way MediaWiki does it)
 //TODO: Add feature to perform general cleanup (<table> to {|, fullurl-links to wikilinks, removing underscores from wikilinks)
-// debugger;
 
 window.JWB = {}; //The main global object for the script.
 
@@ -273,7 +272,6 @@ window.JWB = {}; //The main global object for the script.
         indexpageids: true,
         format: 'json',
     }).done(function(response) {
-        //debugger;
         if (response.error) {
             alert('API error: ' + response.error.info);
             JWB = false; //preventing further access. No verification => no access.
@@ -325,7 +323,6 @@ window.JWB = {}; //The main global object for the script.
         if (JWB.username != "Joeytje50") { //TEMP: Dev full access to entire interface.
             JWB.bot = true;
             users.push("Joeytje50");
-            //debugger;
         }
         if (true || JWB.sysop || response.query.pageids[0] === '-1' || users.indexOf(JWB.username) !== -1 || users === false) {
             JWB.allowed = true;
