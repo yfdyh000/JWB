@@ -1,11 +1,11 @@
 /**<nowiki>
  * Install this script by pasting the following in your personal JavaScript file:
 
-mw.loader.load('//en.wikipedia.org/w/index.php?title=User:Joeytje50/JWB.js/load.js&action=raw&ctype=text/javascript');
+mw.loader.load('//en.wikipedia.org/w/index.php?title=User:YFdyh000/JWB.js/load.js&action=raw&ctype=text/javascript');
 
  * Or for users on en.wikipedia.org:
 
-importScript( 'User:Joeytje50/JWB.js/load.js' ); // Backlink: [[User:Joeytje50/JWB.js/load.js]]
+importScript( 'User:YFdyh000/JWB.js/load.js' ); // Backlink: [[User:YFdyh000/JWB.js/load.js]]
 
  * Note that this script will only run on the 'Project:AutoWikiBrowser/Script' page.
  * This script is based on the downloadable AutoWikiBrowser.
@@ -27,6 +27,7 @@ importScript( 'User:Joeytje50/JWB.js/load.js' ); // Backlink: [[User:Joeytje50/J
  * http://www.gnu.org/copyleft/gpl.html
  * @version 3.2.0
  * @author Joeytje50
+ * @author YFdyh000
  */
 
 window.JWBdeadman = false; // ADMINS: in case of fire, set this variable to true to disable this entire tool for all users  紧急停用开关
