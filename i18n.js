@@ -1440,7 +1440,7 @@ JWB.messages.zh_hans = {
     'save-setup': '保存到 wiki',
     'download-setup': '下载',
     'import-setup': '导入',
-    'tip-import-setup': '上传计算机上储存的设置文件（JSON 格式）。',
+    'tip-import-setup': '上传在本地计算机上储存的设置文件（.json 文件）。',
     'update-setup': '刷新',
     'tip-update-setup': '刷新您在 /$1-settings.js 页面中存储的设置',
 
@@ -1452,8 +1452,8 @@ JWB.messages.zh_hans = {
     'watch-remove': '现在移除',
     'watch-nochange': '不修改监视列表',
     'watch-preferences': '基于首选项监视',
-    'watch-watch': '添加页面到监视列表',
-    'watch-unwatch': '移除监视列表中的页面',
+    'watch-watch': '页面加入监视列表',
+    'watch-unwatch': '页面移出监视列表',
     'auto-save': '自动保存',
     'save-interval': '每$1秒', //$1 represents the throttle/interval input element
     'tip-save-interval': '每次编辑之间暂停秒数',
@@ -1485,7 +1485,7 @@ JWB.messages.zh_hans = {
     'tip-redirects-skip': '跳过重定向',
     'redirects-edit': '编辑',
     'tip-redirects-edit': '编辑重定向本身而非重定向目标',
-    'label-skip-when': '跳过如果:',
+    'label-skip-when': '跳过条件:',
     'skip-no-change': '没有更改',
     'skip-exists-yes': '存在',
     'skip-exists-no': '不存在',
