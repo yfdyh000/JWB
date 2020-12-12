@@ -1410,7 +1410,7 @@ JWB.messages.zh_hans = {
     'pagelist-caption': '在下方输入页面列表:',
     'editbox-caption': '编辑区域',
     'editbox-currentpage': '正在编辑: <a href="/wiki/$2" target="_blank" title="$1">$1</a>',
-    'no-changes-made': '没有做更改。按跳过转至列表中的下一项。',
+    'no-changes-made': '没有可应用更改。按“跳过”转至列表中的下一项。',
     'page-not-exists': '页面不存在，无法展示差异。',
 
     // Stats
@@ -1427,7 +1427,7 @@ JWB.messages.zh_hans = {
     'preparse': '使用预解析模式',
     'tip-preparse': '筛一遍页面列表，将其过滤为仅存当前跳过规则不会跳过的页面。',
     'preparse-reset': '重置',
-    'tip-preparse-reset': '清除页面列表中的 #PRE-PARSE-STOP 标签，以重新预解析整个页面列表',
+    'tip-preparse-reset': '清除页面列表中的 #PRE-PARSE-STOP（预解析停止处）标签，以重新预解析整个页面列表',
     'pagelist-generate': '生成',
     'label-settings': '设置',
     'store-setup': '储存初始设置',
@@ -1514,11 +1514,11 @@ JWB.messages.zh_hans = {
 
     //Dialog boxes
     'confirm-leave': '关闭此标签页将丢失现有进度。',
-    'alert-no-move': '点击移动前，请输入新的页面名称。',
+    'alert-no-move': '点击“移动”前，请输入新的页面名称。',
     'not-on-list': '您的用户名未列于 JWB 用户名录。需由任一管理员授权。',
     'verify-error': '加载 AutoWikiBrowser checkpage 出错:',
     'new-message': '您有新消息，可从状态栏访问。',
-    'no-pages-listed': '点击开始前，需要先输入一些页面到处理列表。',
+    'no-pages-listed': '点击“开始”前，需要先输入一些页面到处理列表。',
     'infinite-skip-notice': "没有指定任何替换规则，JWB 已设置为没有更改时自动跳过。\n" +
         "请复查“内容”和“跳过”选项卡中的内容。",
     'autosave-error': "提交上一页时有问题。请检查“$1”选项卡验证上一次编辑是否正确完成。",
