@@ -1487,7 +1487,7 @@ JWB.messages.zh_hans = {
     'tip-redirects-edit': '编辑重定向本身而非重定向目标',
     'label-skip-when': '跳过条件:',
     'skip-no-change': '没有更改',
-    'skip-exists-yes': '存在',
+    'skip-exists-yes': '页面存在',
     'skip-exists-no': '不存在',
     'skip-exists-neither': '均否',
     'skip-after-action': '移动/保护后跳过编辑',
