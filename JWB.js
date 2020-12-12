@@ -552,7 +552,7 @@ JWB.check.canEditing = function() {
         return false;
     }
 };
-JWB.check.isSysop = function() {
+JWB.check.isSysop = function() { // May be useless, the related interface is hidden.
     alert('You are not an administrator');
     return JWB.sysop;
 };
