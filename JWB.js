@@ -50,7 +50,7 @@ window.JWB = {}; //The main global object for the script.
 
     $.getScript('//en.wikipedia.org/w/index.php?title=User:Joeytje50/JWB.js/i18n.js&action=raw&ctype=text/javascript', function() {
 
-        /** Chinese (Simplified)
+        /* Chinese (Simplified)
          * @author YFdyh000
          */
 
@@ -247,7 +247,7 @@ window.JWB = {}; //The main global object for the script.
             'label-pl': '指定页面:',
             'tip-pl': '获取特定页面上的链接列表。\n支持用竖线“|”字符分隔多个值。',
         };
-        /** Chinese (Traditional)
+        /* Chinese (Traditional)
          * @author YFdyh000 + Machine conversion
          */
 
