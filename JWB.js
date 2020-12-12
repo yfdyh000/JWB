@@ -29,7 +29,7 @@ importScript( 'User:Joeytje50/JWB.js/load.js' ); // Backlink: [[User:Joeytje50/J
  * @author Joeytje50
  */
 
-window.JWBdeadman = false; // ADMINS: in case of fire, set this variable to true to disable this entire tool for all users
+window.JWBdeadman = false; // ADMINS: in case of fire, set this variable to true to disable this entire tool for all users  紧急停用开关
 
 //TODO: more advanced pagelist-generating options
 //TODO: generate page list based on images on a page
@@ -339,7 +339,7 @@ window.JWB = {}; //The main global object for the script.
 
 /***** Global object/variables *****/
 
-var objs = ['page', 'api', 'fn', 'pl', 'messages', 'setup', 'settings', 'ns'];
+var objs = ['page', 'api', 'check', 'fn', 'pl', 'messages', 'setup', 'settings', 'ns'];
 for (var i = 0; i < objs.length; i++) {
     JWB[objs[i]] = {};
 }
@@ -551,11 +551,11 @@ JWB.check.editing = function() {
         }
         return false;
     }
-}
+};
 JWB.check.sysop = function() {
     alert('You are not an administrator');
     return JWB.sysop;
-}
+};
 
 JWB.api.submit = function(page) {
     if (!JWB.check.editing) return;
