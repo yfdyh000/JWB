@@ -169,7 +169,7 @@ window.JWB = {}; //The main global object for the script.
             //Dialog boxes
             'confirm-leave': '关闭此标签页将丢失现有进度。',
             'alert-no-move': '点击“移动”前，请输入新的页面名称。',
-            'not-on-list': '您的用户名未列于 JWB 用户名录。需由任一管理员授权。',
+            'not-on-list': '您的用户名未列于 JWB 用户名录（checkpage），不能提交。需由任一管理员授权。',
             'verify-error': '加载 AutoWikiBrowser checkpage 出错:',
             'new-message': '您有新消息，可从状态栏访问。',
             'no-pages-listed': '点击“开始”前，需要先输入一些页面到处理列表。',
@@ -364,7 +364,7 @@ window.JWB = {}; //The main global object for the script.
             //Dialog boxes
             'confirm-leave': '關閉此分頁將遺失現有進度。',
             'alert-no-move': '點擊「移動」前，請輸入新的頁面名稱。',
-            'not-on-list': '您的用戶名稱未列於 JWB 用戶名稱錄。需由任一管理員授權。',
+            'not-on-list': '您的用戶名未列於 JWB 用戶名錄（checkpage），不能遞交。需由任一管理員授權。',
             'verify-error': '載入 AutoWikiBrowser checkpage 出錯:',
             'new-message': '您有新訊息，可從狀態列存取。',
             'no-pages-listed': '點擊「開始」前，需要先輸入一些頁面到處理列表。',
@@ -741,6 +741,7 @@ JWB.api.get = function(pagename) {
 
 //Some functions with self-explanatory names:
 JWB.check.canEditing = function() {
+    //debugger;
     if (JWB.authorized) {
         return true;
     } else {
