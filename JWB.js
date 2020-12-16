@@ -1,4 +1,4 @@
-/**<nowiki>
+/*<nowiki>
  * Install this script by pasting the following in your personal JavaScript file:
 
 mw.loader.load('//zh.wikipedia.org/w/index.php?title=User:YFdyh000/JWB.js/load.js&action=raw&ctype=text/javascript');
@@ -1373,7 +1373,7 @@ JWB.log = function(action, page, info) {
             break;
         case 'nobots':
             action = 'bot-skip';
-            extraInfo = ' (<a target="_blank" href="https://en.wikipedia.org/wiki/Template:Bots">{{bots}}</a>)';
+            extraInfo = ' (<a target="_blank" href="https://zh.wikipedia.org/wiki/Template:Bots">{{bots}}</a>)';
             // no break;
         case 'skip':
             actionStat = 'pagesSkipped';
