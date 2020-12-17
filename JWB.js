@@ -1724,9 +1724,9 @@ JWB.init = function() {
             '<br>' :
             '') +
         '<span id="startstop">' +
-        '<button id="startbutton" accesskey="a" title="[' + JWB.tooltip + 'a]">' + JWB.msg('editbutton-start') + '</button>' +
+        '<button id="startbutton" class="editbutton" accesskey="a" title="[' + JWB.tooltip + 'a]">' + JWB.msg('editbutton-start') + '</button>' +
         '<br>' +
-        '<button id="stopbutton" disabled accesskey="q" title="[' + JWB.tooltip + 'q]">' + JWB.msg('editbutton-stop') + '</button> ' +
+        '<button id="stopbutton" class="editbutton" disabled accesskey="q" title="[' + JWB.tooltip + 'q]">' + JWB.msg('editbutton-stop') + '</button> ' +
         '</span>' +
         '<button class="editbutton" id="skipButton" disabled accesskey="n" title="[' + JWB.tooltip + 'n]">' + JWB.msg('editbutton-skip') + '</button>' +
         '<button class="editbutton" id="submitButton" disabled accesskey="s" title="[' + JWB.tooltip + 's]">' + JWB.msg('editbutton-save') + '</button>' +
